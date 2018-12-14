@@ -1,18 +1,17 @@
-package com.yuanchun.oeder.api.controller;
+package com.yuanchun.orderfeigen.api.controller;
 
-import com.yuanchun.oeder.api.service.IMemberService;
+import com.yuanchun.orderfeigen.api.service.IConsumeFeignService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class MemberController {
-
+public class ConsumeFeignController {
     @Autowired
-    private IMemberService memberService;
+    private IConsumeFeignService memberFeignService;
 
     @RequestMapping("/callMemberService")
     public String callMemberService(){
-        return memberService.callMemberService();
+        return memberFeignService.callMemberService();
     }
 }

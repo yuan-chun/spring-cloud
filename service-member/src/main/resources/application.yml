@@ -4,7 +4,7 @@ eureka:
       defaultZone: http://localhost:8888/eureka/,http://localhost:9999/eureka/
 server:
 #  模拟集群模式，可以在本地修改port启动多个 8100，8101，8102
-  port: 8101
+  port: 8102
 spring:
   application:
     name: service-member

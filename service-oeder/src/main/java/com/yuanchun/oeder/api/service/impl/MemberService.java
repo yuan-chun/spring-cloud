@@ -22,4 +22,5 @@ public class MemberService implements IMemberService {
     public String callMemberService(){
         return restTemplate.getForObject("http://service-member/getMemberService",String.class);
     }
+
 }
