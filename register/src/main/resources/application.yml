@@ -4,9 +4,10 @@ eureka:
   instance:
     hostname: localhost
   client:
+    serviceUrl:
+    #     搭建注册中心集群模式使用
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
     #    不把自己注册
     registerWithEureka: false
     #    不扫描自己
     fetchRegistry: false
-    serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
