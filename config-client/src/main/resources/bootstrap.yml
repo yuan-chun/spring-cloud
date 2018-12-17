@@ -2,13 +2,13 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8888/eureka/,http://localhost:9999/eureka/
-    #    ±£Ö¤»º´æÊı¾İµÄÓĞĞ§ĞÔ£¬µ÷ÓÃÕß»á¶¨Ê±£¨Ä¬ÈÏÖµÎª30s£©Ïò×¢²áÖĞĞÄ¸üĞÂÊµÀı£¬¸üĞÂµ÷ÓÃ·½±¾µØ»º´æ
+    #    ä¿è¯ç¼“å­˜æ•°æ®çš„æœ‰æ•ˆæ€§ï¼Œè°ƒç”¨è€…ä¼šå®šæ—¶ï¼ˆé»˜è®¤å€¼ä¸º30sï¼‰å‘æ³¨å†Œä¸­å¿ƒæ›´æ–°å®ä¾‹ï¼Œæ›´æ–°è°ƒç”¨æ–¹æœ¬åœ°ç¼“å­˜
     registry-fetch-interval-seconds: 1
   instance:
-    #     ÏÂÃæÁ½¸öÅäÖÃÊÇÔÚÌá¹©·½ÅäÖÃ
-    #    //·şÎñÊµÀı»áÍ¨¹ıĞÄÌø£¨Ä¬ÈÏÖµÎª30s)ĞøÔ¼µÄ·½Ê½ÏòEureka Server¶¨Ê±¸üĞÂ×Ô¼ºµÄ×´Ì¬
-    lease-renewal-interval-in-seconds: 1
-    #    //×âÆÚµ½ÆÚÊ±¼ä£¨Ä¬ÈÏ90Ãë£©,Èç¹û·¢ÏÖÊµÀıÔÚÔÚÒ»¶¨Ê±¼ä£¨Ä¬ÈÏÖµÎª90s£©ÄÚÃ»ÓĞÊÕµ½ĞÄÌø£¬Ôò»á×¢Ïú´ËÊµÀı£¬ÖÁÉÙ´óÓÚleaseRenewalIntervalInSeconds
+    #     ä¸‹é¢ä¸¤ä¸ªé…ç½®æ˜¯åœ¨æä¾›æ–¹é…ç½®
+    #    //æœåŠ¡å®ä¾‹ä¼šé€šè¿‡å¿ƒè·³ï¼ˆé»˜è®¤å€¼ä¸º30s)ç»­çº¦çš„æ–¹å¼å‘Eureka Serverå®šæ—¶æ›´æ–°è‡ªå·±çš„çŠ¶æ€
+    lease-renewal-interval-in-seconds: 10
+    #    //ç§ŸæœŸåˆ°æœŸæ—¶é—´ï¼ˆé»˜è®¤90ç§’ï¼‰,å¦‚æœå‘ç°å®ä¾‹åœ¨åœ¨ä¸€å®šæ—¶é—´ï¼ˆé»˜è®¤å€¼ä¸º90sï¼‰å†…æ²¡æœ‰æ”¶åˆ°å¿ƒè·³ï¼Œåˆ™ä¼šæ³¨é”€æ­¤å®ä¾‹ï¼Œè‡³å°‘å¤§äºleaseRenewalIntervalInSeconds
     lease-expiration-duration-in-seconds: 3
 server:
   port: 8050
@@ -17,14 +17,14 @@ spring:
     name: config-client
   cloud:
     config:
-      #ÅäÖÃ·şÎñÖĞĞÄ
+      #é…ç½®æœåŠ¡ä¸­å¿ƒ
       discovery:
         enabled: true
         service-id: config-server
       #test-test.properties
-      #¶ÔÓ¦{application}²¿·Ö
+      #å¯¹åº”{application}éƒ¨åˆ†
       name: config-client
-      #¶ÔÓ¦{profile}²¿·Ö
+      #å¯¹åº”{profile}éƒ¨åˆ†
       profile: dev
-      #¶ÔÓ¦gitµÄ·ÖÖ§¡£Èç¹ûÅäÖÃÖĞĞÄÊ¹ÓÃµÄÊÇ±¾µØ´æ´¢£¬Ôò¸Ã²ÎÊıÎŞÓÃ
+      #å¯¹åº”gitçš„åˆ†æ”¯ã€‚å¦‚æœé…ç½®ä¸­å¿ƒä½¿ç”¨çš„æ˜¯æœ¬åœ°å­˜å‚¨ï¼Œåˆ™è¯¥å‚æ•°æ— ç”¨
       label: master
