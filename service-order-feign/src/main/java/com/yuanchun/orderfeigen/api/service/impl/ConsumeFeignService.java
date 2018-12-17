@@ -1,7 +1,6 @@
 package com.yuanchun.orderfeigen.api.service.impl;
 
 import com.yuanchun.orderfeigen.api.service.IConsumeFeignService;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 @Service
