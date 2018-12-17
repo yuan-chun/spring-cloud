@@ -4,12 +4,12 @@ eureka:
       defaultZone: http://localhost:8888/eureka/,http://localhost:9999/eureka/
 spring:
   application:
-    name: config-client-test
+    name: config-client
   cloud:
     config:
       discovery:
         enabled: true
-        service-id: configServer
+        service-id: config-server
       name: test
       profile: test
       label: master
