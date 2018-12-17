@@ -14,12 +14,14 @@ server:
   port: 8040
 spring:
   application:
-    name: spring-cloud-config-server
+    name: config-server
   cloud:
     config:
       server:
         git:
+#          项目地址
           uri: https://github.com/yuan-chun/spring-cloud/
-          search-paths: config-server
+#          获取资源地址
+          search-paths: config-server/src/main/resources
           username: yuan-chun
           password: zy521521.
