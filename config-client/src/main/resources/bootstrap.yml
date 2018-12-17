@@ -14,7 +14,7 @@ server:
   port: 8050
 spring:
   application:
-    name: config-client
+    name: config
   cloud:
     config:
       #配置服务中心
@@ -23,7 +23,7 @@ spring:
         service-id: config-server
       #test-test.properties
       #对应{application}部分
-      name: config-client
+      name: config
       #对应{profile}部分
       profile: dev
       #对应git的分支。如果配置中心使用的是本地存储，则该参数无用
