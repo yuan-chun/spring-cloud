@@ -22,6 +22,6 @@ spring:
 #          项目地址
           uri: https://github.com/yuan-chun/spring-cloud/
 #          获取资源地址
-          search-paths: config-server/src/main/resources
+          search-paths: config-client/src/main/resources
           username: yuan-chun
           password: zy521521.
