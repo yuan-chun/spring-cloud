@@ -7,7 +7,7 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/yuan-chun/spring-cloud/    # 配置git仓库的地址
-          search-paths: config-server                             # git仓库地址下的相对地址，可以配置多个，用,分割。
-          username: yuan-chun                                            # git仓库的账号
+          uri: https://github.com/yuan-chun/spring-cloud/
+          search-paths: config-server
+          username: yuan-chun
           password: zy521521.
