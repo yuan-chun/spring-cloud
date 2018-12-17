@@ -1,5 +1,6 @@
 package com.yuanchun.oeder.api.service.impl;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.yuanchun.oeder.api.service.IMemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -19,8 +20,14 @@ public class MemberService implements IMemberService {
     private RestTemplate restTemplate;
 
     @Override
+    @HystrixCommand(fallbackMethod = "orderError")
     public String callMemberService(){
         return restTemplate.getForObject("http://service-member/getMemberService",String.class);
     }
+
+    public String orderError() {
+        return "order callservice member error,ribbon fallbackMethod";
+    }
+
 
 }

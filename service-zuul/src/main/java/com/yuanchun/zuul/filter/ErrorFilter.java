@@ -6,6 +6,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
+import javax.servlet.http.HttpServletRequest;
+
 @Component
 public class ErrorFilter extends ZuulFilter {
 
@@ -34,11 +36,16 @@ public class ErrorFilter extends ZuulFilter {
     /**
      * 返回一个boolean值来判断该过滤器是否要执行。
      * 我们可以通过此方法来指定过滤器的有效范围
+     * 请求参数带上 filterFlag 测试
      * @return
      */
     @Override
     public boolean shouldFilter() {
-        return true;
+        RequestContext ctx = RequestContext.getCurrentContext();
+        HttpServletRequest request = ctx.getRequest();
+        String flag = request.getParameter("error");
+        boolean filter = "true".equals(flag)? true:false;
+        return filter;
     }
 
     /**
@@ -48,13 +55,9 @@ public class ErrorFilter extends ZuulFilter {
     @Override
     public Object run() {
         RequestContext ctx = RequestContext.getCurrentContext();
-        ctx.setSendZuulResponse(false);
-        ctx.setResponseStatusCode(500);
-        try {
-            ctx.getResponse().getWriter().write("ERROR ！！！");
-        } catch (Exception e) {
-        }
+        log.info("进入异常过滤器");
+        System.out.println("errorfilter getResponseBody = "+ctx.getResponseBody());
+        ctx.setResponseBody("error后配置数据");
         return null;
-
     }
 }

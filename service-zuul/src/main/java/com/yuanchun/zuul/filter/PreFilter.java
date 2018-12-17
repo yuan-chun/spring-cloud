@@ -46,9 +46,7 @@ public class PreFilter extends ZuulFilter {
     public boolean shouldFilter() {
         RequestContext ctx = RequestContext.getCurrentContext();
         HttpServletRequest request = ctx.getRequest();
-        log.info(String.format("%s shouldFilter >>> %s", request.getMethod(), request.getRequestURL().toString()));
-        String flag = request.getParameter("filterFlag");
-        log.info(String.format("%s shouldFilter >>> accessToken %s", request.getMethod(), flag));
+        String flag = request.getParameter("pre");
         boolean filter = "true".equals(flag)? true:false;
         return filter;
     }
@@ -70,7 +68,7 @@ public class PreFilter extends ZuulFilter {
         ctx.setSendZuulResponse(false);
         ctx.setResponseStatusCode(401);
         try {
-            ctx.getResponse().getWriter().write("token is empty, request need parameter 'token'");
+           ctx.getResponse().getWriter().write("token is empty, request need parameter 'token'");
         } catch (Exception e) {
         }
         return null;

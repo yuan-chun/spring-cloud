@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ConsumeFeignController {
     @Autowired
-    private IConsumeFeignService memberFeignService;
+    private IConsumeFeignService consumeFeignService;
 
     @RequestMapping("/callMemberService")
     public String callMemberService(){
-        return memberFeignService.callMemberService();
+        return consumeFeignService.callMemberService();
     }
 }
