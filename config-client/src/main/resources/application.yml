@@ -14,4 +14,4 @@ server:
   port: 8050
 spring:
   application:
-    name: config-server
+    name: config
