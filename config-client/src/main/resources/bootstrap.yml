@@ -22,5 +22,6 @@ spring:
         service-id: config-server
       #test-test.properties
       #对应{application}部分
-      profile: dev
+      name: config
+      profile: prod
       label: master
