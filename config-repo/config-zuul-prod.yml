@@ -1,0 +1,10 @@
+zuul:
+  routes:
+    api-a:
+      path: /api-member/**
+      service-id: service-member
+    api-b:
+      path: /api-order/**
+      service-id: service-order
+  # 此处解决后端服务重定向导致用户浏览的 host 变成 后端服务的 host 问题
+  add-host-header: false
