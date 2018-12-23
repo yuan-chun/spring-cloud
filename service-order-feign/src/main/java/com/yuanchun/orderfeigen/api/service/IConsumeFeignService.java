@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @FeignClient(value="service-member",fallback= ConsumeFeignService.class )//制定服务名来绑定服务
 public interface IConsumeFeignService {
 
-    @RequestMapping("/getMemberService")//调用远程服务中的具体方法，接口名提供本项目服务 controller 调用
+    @RequestMapping("/getMemberService")//调用远程服务中的具体方法,和远程服务路径一样，接口名提供本项目服务 controller 调用
     public String callMemberService();
 
 }

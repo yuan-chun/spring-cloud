@@ -18,15 +18,20 @@ spring:
   application:
 #    当spring.cloud.config.name没有指定值时，默认值是apring.application.name
     name: config-client
-  cloud:
-    config:
-      discovery:
-        enabled: true
-        service-id: config-server
-      name: config
-      profile: prod
-      label: master
-
+#  cloud:
+#    config:
+#      discovery:
+##        开启Config服务发现支持
+#        enabled: true
+##        指定server端的name,也就是server端spring.application.name的值
+#        service-id: config-server
+#      name: config-zuul
+#      profile: prod
+#      label: master
+# cmd 执行刷新客户端 curl -X POST http://localhost:8050/refresh
+management:
+  security:
+    enabled: false
 
 #方式二,单节点 注释启动类 @EnableEurekaClient
 #server:

@@ -1,4 +1,4 @@
-package com.yuanchun.config.client.entry;
+package com.yuanchun.config.client.bus.entry;
 
 public class Config {
 

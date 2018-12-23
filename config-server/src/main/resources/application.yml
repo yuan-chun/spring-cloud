@@ -25,3 +25,16 @@ spring:
           search-paths: config-repo
           username: yuan-chun
           password: zy521521.
+  bus:
+    trace:
+      enabled: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+# cmd 执行 curl -X POST http://localhost:8050/refresh
+# 更新指定的client curl -X POST http://localhost:8050/bus/refresh？destination=config-lient-bus:8050
+management:
+  security:
+    enabled: false

@@ -1,4 +1,4 @@
-package com.yuanchun.config.client.controller;
+package com.yuanchun.config.client.bus.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 

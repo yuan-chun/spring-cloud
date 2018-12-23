@@ -1,4 +1,4 @@
-package com.yuanchun.config.client;
+package com.yuanchun.config.client.bus;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
