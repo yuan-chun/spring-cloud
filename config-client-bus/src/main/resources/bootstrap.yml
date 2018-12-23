@@ -1,0 +1,63 @@
+#bootstrap 会比application先加载，加载时找不到config-server会报错
+#方式一 集群
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8888/eureka/,http://localhost:9999/eureka/
+    #    保证缓存数据的有效性，调用者会定时（默认值为30s）向注册中心更新实例，更新调用方本地缓存
+    registry-fetch-interval-seconds: 1
+  instance:
+    #     下面两个配置是在提供方配置
+    #    //服务实例会通过心跳（默认值为30s)续约的方式向Eureka Server定时更新自己的状态
+    lease-renewal-interval-in-seconds: 1
+    #    //租期到期时间（默认90秒）,如果发现实例在在一定时间（默认值为90s）内没有收到心跳，则会注销此实例，至少大于leaseRenewalIntervalInSeconds
+    lease-expiration-duration-in-seconds: 3
+server:
+  port: 8050
+spring:
+  application:
+#    当spring.cloud.config.name没有指定值时，默认值是apring.application.name
+    name: config-client-bus
+  cloud:
+    config:
+      discovery:
+#        开启Config服务发现支持
+        enabled: true
+#        指定server端的name,也就是server端spring.application.name的值
+        service-id: config-server
+      name: config
+      profile: prod
+      label: master
+#      ## 开启消息跟踪
+  bus:
+    trace:
+      enabled: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+# cmd 执行刷新客户端 curl -X POST http://localhost:8051/refresh
+management:
+  security:
+    enabled: false
+
+
+
+
+
+
+
+
+#方式二,单节点 注释启动类 @EnableEurekaClient
+#server:
+#  port: 8050
+#spring:
+#  application:
+#    name: config-client
+#  cloud:
+#    config:
+#      uri: http://localhost:8040/
+#      name: config
+#      profile: prod
+#      label: master
