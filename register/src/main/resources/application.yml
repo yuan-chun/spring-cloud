@@ -14,7 +14,7 @@ eureka:
     fetchRegistry: false
 
   server:
-    #      开启自我保护
+    # 开启自我保护 eureka 自我保护机制，网络延时，实际是 CAP 中的 AP 高可用性，舍弃了一致性
     enableSelfPreservation: true
     # 设置清理间隔,单位为毫秒,默认为0
     eviction-interval-timer-in-ms: 3000
