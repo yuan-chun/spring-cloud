@@ -2,15 +2,15 @@ server:
   port: 9999
 eureka:
   instance:
-    hostname: localhost
+    hostname: register9999.com
   client:
     serviceUrl:
     #     搭建注册中心集群模式使用
-      defaultZone: http://${eureka.instance.hostname}:8888/eureka/
-    #    不把自己注册
-    registerWithEureka: true
-    #    不扫描自己
-    fetchRegistry: true
+      defaultZone: http://register8888.com:8888/eureka/
+    #    false不把自己注册
+    registerWithEureka: false
+    #    false不扫描自己
+    fetchRegistry: false
 
   server:
     # 开启自我保护

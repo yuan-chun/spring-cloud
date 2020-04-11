@@ -1,7 +1,7 @@
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8888/eureka/,http://localhost:9999/eureka/
+      defaultZone: http://register8888.com:8888/eureka/,http://register9999.com:9999/eureka/
     #    保证缓存数据的有效性，调用者会定时（默认值为30s）向注册中心更新实例，更新调用方本地缓存
     registry-fetch-interval-seconds: 1
   instance:
