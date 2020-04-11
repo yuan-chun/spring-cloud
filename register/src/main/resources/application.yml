@@ -9,9 +9,9 @@ eureka:
 #      defaultZone: http://${eureka.instance.hostname}:9999/eureka/ 这么写不行，找到的是 register8888.com
       defaultZone: http://register9999.com:9999/eureka/
     #    false不把自己注册
-    registerWithEureka: true
+    registerWithEureka: false
     #    false不扫描自己
-    fetchRegistry: true
+    fetchRegistry: false
 
   server:
     #      开启自我保护
