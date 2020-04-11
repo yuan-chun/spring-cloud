@@ -10,6 +10,10 @@ eureka:
     lease-renewal-interval-in-seconds: 1
     #    //租期到期时间（默认90秒）,如果发现实例在在一定时间（默认值为90s）内没有收到心跳，则会注销此实例，至少大于leaseRenewalIntervalInSeconds
     lease-expiration-duration-in-seconds: 3
+    #    暴露 hostname
+    instance-id: order8201
+    #暴露ip
+    prefer-ip-address: true
 #    实现feign接口方式开始服务降级
 feign:
   hystrix:

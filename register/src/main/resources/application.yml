@@ -5,7 +5,7 @@ eureka:
     hostname: register8888.com
   client:
     serviceUrl:
-    #     搭建注册中心集群模式使用
+    #     搭建注册中心集群模式使用 相互注册，互相守望
 #      defaultZone: http://${eureka.instance.hostname}:9999/eureka/ 这么写不行，找到的是 register8888.com
       defaultZone: http://register9999.com:9999/eureka/
     #    false不把自己注册
