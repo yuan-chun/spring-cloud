@@ -14,7 +14,9 @@ eureka:
     instance-id: order8201
     #暴露ip
     prefer-ip-address: true
-#实现feign接口方式开始服务降级，
+#实现feign接口方式开始服务降级 failBack 兜底的方案，
+#服务熔断 break,当一定次数的请求，失败比例达到配置值时，就会熔断，就是不提供服务，直接failBack，此时就算正常的请求也会失败，等到一个窗口期后才会尝试恢复提供服务
+#服务限流 flowLimit
 feign:
   hystrix:
     enabled: true

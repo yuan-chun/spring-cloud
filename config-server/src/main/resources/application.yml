@@ -25,6 +25,7 @@ spring:
           search-paths: config-repo
           username: yuan-chun
           password: zy521521.
+          #http://localhost:8040/master/config-dev.yml http://localhost:8040/master/config-test.yml 可访问配置
   bus:
     trace:
       enabled: true

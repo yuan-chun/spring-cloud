@@ -1,5 +1,6 @@
 package com.yuanchun.member.api.controller;
 
+import javafx.beans.DefaultProperty;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,6 +17,7 @@ public class ProvideController {
      * 客户端 -> 服务中心-> 其他服务中心(轮询)（当前）
      * @return
      */
+
     @RequestMapping("/getMemberService")
     public String getMemberService(){
         //省略向 service 的调用，直接返回。
@@ -24,7 +26,6 @@ public class ProvideController {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        return "this is service-member and port = " + port;
+        return Thread.currentThread().getName() + "this is service-member and port = " + port;
     }
-
 }

@@ -18,7 +18,7 @@ server:
   port: 8866
 spring:
   application:
-    #    当spring.cloud.config.name没有指定值时，默认值是apring.application.name
+    #    当spring.cloud.config.name没有指定值时，默认值是spring.application.name
     name: getway-zuul
   cloud:
     config:
