@@ -14,7 +14,7 @@ eureka:
     instance-id: order8201
     #暴露ip
     prefer-ip-address: true
-    实现feign接口方式开始服务降级，
+#实现feign接口方式开始服务降级，
 feign:
   hystrix:
     enabled: true
@@ -41,3 +41,9 @@ server:
 spring:
   application:
     name: service-order-feign
+
+
+logging:
+  level:
+    #监控的接口
+    com.yuanchun.orderfeigen.api.service.IConsumeFeignService: debug
