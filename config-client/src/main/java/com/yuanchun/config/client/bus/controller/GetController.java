@@ -15,6 +15,7 @@ public class GetController {
 
     //http:localhost:8051/getFromConfigServer
     //git 上的配置文件修改时，config-server 可以获得最新的，但是config-client无法更新，因为缓存
+    //curl -X POST http://localhost:8051/refresh
     @RequestMapping("/getFromConfigServer")
     public String getFromConfigServer(){
         return "eureka.instance.lease-renewal-interval-in-seconds = "+eilriis;

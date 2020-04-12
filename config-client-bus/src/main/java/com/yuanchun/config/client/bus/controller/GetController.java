@@ -15,7 +15,7 @@ public class GetController {
 
 
     //http:localhost:8050/getFromConfigServer
-    //http:localhost:8050/master/config-dev.yml
+    //cmd 执行刷新客户端 curl -X POST http://localhost:8050/refresh
     @RequestMapping("/getFromConfigServer")
     public String getFromConfigServer(){
         return "eureka.instance.lease-renewal-interval-in-seconds = "+eilriis;
