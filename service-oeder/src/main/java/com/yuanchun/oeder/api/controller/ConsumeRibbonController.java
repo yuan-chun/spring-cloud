@@ -17,6 +17,7 @@ public class ConsumeRibbonController {
      * 客户端 -> 服务中心（当前）-> 其他服务中心(轮询)
      * @return
      */
+    //http://localhost:8201/callMemberService
     @RequestMapping("/callMemberService")
     public String callMemberService(){
         return memberService.callMemberService();

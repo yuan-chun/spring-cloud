@@ -19,6 +19,11 @@ public class ProvideController {
     @RequestMapping("/getMemberService")
     public String getMemberService(){
         //省略向 service 的调用，直接返回。
+        try {//超时
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return "this is service-member and port = " + port;
     }
 

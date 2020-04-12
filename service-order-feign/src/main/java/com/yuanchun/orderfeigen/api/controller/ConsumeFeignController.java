@@ -10,6 +10,7 @@ public class ConsumeFeignController {
     @Autowired
     private IConsumeFeignService consumeFeignService;
 
+    //http://localhost:8220/callMemberService
     @RequestMapping("/callMemberService")
     public String callMemberService(){
         return consumeFeignService.callMemberService();

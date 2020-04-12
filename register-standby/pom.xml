@@ -21,6 +21,11 @@
     </properties>
 
     <dependencies>
+<!--        &lt;!&ndash;zookeeper &ndash;&gt;
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zookeeper-discovery</artifactId>
+        </dependency>-->
         <!--eureka server -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

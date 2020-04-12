@@ -11,12 +11,12 @@ eureka:
 #    //租期到期时间（默认90秒）,如果发现实例在在一定时间（默认值为90s）内没有收到心跳，则会注销此实例，至少大于leaseRenewalIntervalInSeconds
     lease-expiration-duration-in-seconds: 3
 #    暴露 hostname
-    instance-id: member8101
+    instance-id: member8100
     #暴露ip
     prefer-ip-address: true
 server:
 #  模拟集群模式，可以在本地修改port启动多个 8100，8101，8102
-  port: 8101
+  port: 8100
 spring:
   application:
     name: service-member
