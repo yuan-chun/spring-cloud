@@ -24,6 +24,7 @@ spring:
 #        开启Config服务发现支持
         enabled: true
 #        指定server端的name,也就是server端spring.application.name的值
+        #指定从 config-server 读取配置信息
         service-id: config-server
       name: config
       profile: prod
@@ -37,7 +38,7 @@ spring:
     port: 5672
     username: guest
     password: guest
-# cmd 执行刷新客户端 curl -X POST http://localhost:8051/refresh
+# cmd 执行刷新客户端 curl -X POST http://localhost:8050/refresh
 management:
   security:
     enabled: false

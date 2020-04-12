@@ -13,22 +13,22 @@ eureka:
     #    //租期到期时间（默认90秒）,如果发现实例在在一定时间（默认值为90s）内没有收到心跳，则会注销此实例，至少大于leaseRenewalIntervalInSeconds
     lease-expiration-duration-in-seconds: 3
 server:
-  port: 8050
+  port: 8051
 spring:
   application:
-#    当spring.cloud.config.name没有指定值时，默认值是apring.application.name
+#    当spring.cloud.config.name没有指定值时，默认值是spring.application.name
     name: config-client
-#  cloud:
-#    config:
-#      discovery:
-##        开启Config服务发现支持
-#        enabled: true
-##        指定server端的name,也就是server端spring.application.name的值
-#        service-id: config-server
-#      name: config-zuul
-#      profile: prod
-#      label: master
-# cmd 执行刷新客户端 curl -X POST http://localhost:8050/refresh
+  cloud:
+    config:
+      discovery:
+#        开启Config服务发现支持
+        enabled: true
+#        指定server端的name,也就是server端spring.application.name的值
+        service-id: config-server
+      name: config-zuul
+      profile: prod
+      label: master
+# cmd 执行刷新客户端 curl -X POST http://localhost:8051/refresh
 management:
   security:
     enabled: false
